@@ -32,6 +32,8 @@ class Calc extends Component {
     this.clearAll = this.clearAll.bind(this);
     this.addOneDot = this.addOneDot.bind(this);
     this.handleSliderValue = this.handleSliderValue.bind(this);
+    this.backSpacer = this.backSpacer.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   };
 
   handleSliderValue(e){
@@ -87,6 +89,14 @@ class Calc extends Component {
       })
     }
   };
+  
+  backSpacer(){
+    const {displayValue} = this.state;
+    
+    this.setState({
+      displayValue: displayValue.substring(0, displayValue.length - 1) || '0'
+    });
+  };
 
   clearAll(){
     this.setState({
@@ -103,6 +113,42 @@ class Calc extends Component {
     })
   };
 
+  handleKeyDown(e){
+    let {key} = e;
+    console.log(key);
+    
+    if (key === 'Enter') {key = '='};
+
+    if((/\d/).test(key)){
+      e.preventDefault();
+      this.inputDigit(parseInt(key));
+    } else if (key in CalculatorOperations) {
+      e.preventDefault();
+      this.performOperation(key);
+    } else if (key === '.') {
+      e.preventDefault();
+      this.addOneDot();
+    } else if (key === 'Backspace') {
+      e.preventDefault();
+      this.backSpacer();
+    } else if (key === 'Clear') {
+      e.preventDefault();
+      
+      if(this.state.displayValue !== '0') {
+        this.clear();
+      } else {
+        this.clearAll();
+      }
+    }
+  };
+
+  componentDidMount(){
+    document.addEventListener('keydown', this.handleKeyDown)
+  };
+
+  componentWillUnmount(){
+    document.removeEventListener('keydown', this.handleKeyDown)
+  };
   render (){
     return (
       <div className="calculator">
