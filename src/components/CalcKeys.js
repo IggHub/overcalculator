@@ -3,13 +3,14 @@ import CalcKey from './CalcKey';
 
 class CalcKeys extends Component {
   render(){
-    const {displayValue, clearAll, clear, inputDigit, performOperation, addOneDot} = this.props;
+    const {displayValue, clearAll, clear, inputDigit, performOperation, addOneDot, toggleSign} = this.props;
     const displayAC = displayValue === '0';
     const showRightClearText = displayAC ? 'AC' : 'C';
     return (
       <div className="calc-keys">
         <CalcKey className="key-ce" onClick={() => displayAC ? clearAll() : clear()}>{showRightClearText}</CalcKey>
-        <CalcKey className="key-divide" onClick={() => performOperation('/')}>/</CalcKey>
+        <CalcKey className="key-plus-minus" onClick={() => toggleSign()}>+/-</CalcKey>
+ 	<CalcKey className="key-divide" onClick={() => performOperation('/')}>/</CalcKey>
         <CalcKey className="key-7" onClick={() => inputDigit(7)}>7</CalcKey>
         <CalcKey className="key-8" onClick={() => inputDigit(8)}>8</CalcKey>
         <CalcKey className="key-9" onClick={() => inputDigit(9)}>9</CalcKey>
