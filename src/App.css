@@ -14,9 +14,10 @@ body {
 }
 
 .app {
-  width: 300px;
-  height: 520px;
-  position: relative;
+  width: 375px;
+  height: 556px;
+  position: absolute;
+  top: 0px;
 }
 
 button {
@@ -32,9 +33,7 @@ button {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.50);
 }
 
 .calc-display {
@@ -44,39 +43,52 @@ button {
   font-size: 3em;
   color: #FFF;
   outline: 1px solid #000;
-  text-align: right;
+  transform-origin: right;
+  position: absolute;
+  flex: 1;
+  right: 0;
 }
 
 .calc-text {
-  margin: 10px;
+  position: absolute;
+  right: 0;
+  transform-origin: right;
+  display: inline-block;
+  flex: 1;
+  height: 222px;
 }
 
 .calc-keys {
   width: 100%;
-  height: 375px;
+  height: 334px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   background: #BBB;
+  position: absolute;
+  top: 75px;
 }
 
 .key {
-  height: 75px;
-  width: 75px;
-  outline: 1px solid black;
+  height: 67px;
+  width: 93px;
   font-size: 3em;
   text-align: center;
   line-height: 75px;
   cursor: pointer;
 }
 
+.key:active {
+  background: #7DEBDF;
+  color: #FFF;
+}
+
 .key-ce {
-  background: tomato;
-  width: 225px;
+  width: 186px;
 }
 
 .key-0 {
-  width: 150px;
+  width: 186px;
 }
 
 
