@@ -15,7 +15,7 @@ body {
 
 .app {
   width: 375px;
-  height: 556px;
+  height: 444px;
   position: absolute;
   top: 0px;
 }
@@ -37,10 +37,9 @@ button {
 }
 
 .calc-display {
-  background: #464646;
+  background: #3E3636;
   width: 100%;
-  height: 75px;
-  font-size: 3em;
+  height: 100px;
   color: #FFF;
   outline: 1px solid #000;
   transform-origin: right;
@@ -55,7 +54,8 @@ button {
   transform-origin: right;
   display: inline-block;
   flex: 1;
-  height: 222px;
+  height: 100px;
+  padding: 15px;
 }
 
 .calc-keys {
@@ -64,9 +64,9 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background: #BBB;
+  background: #FFF;
   position: absolute;
-  top: 75px;
+  top: 100px;
 }
 
 .key {
