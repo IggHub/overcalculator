@@ -141,7 +141,7 @@ class Calc extends Component {
     } else if (key === 'Backspace') {
       e.preventDefault();
       this.backSpacer();
-    } else if (key === 'Clear') {
+    } else if (key === 'Clear'|| key === 'c') {
       e.preventDefault();
       
       if(this.state.displayValue !== '0') {
@@ -149,6 +149,9 @@ class Calc extends Component {
       } else {
         this.clearAll();
       }
+    } else if (key === 't'){
+      e.preventDefault();
+      this.toggleSign();
     }
   };
 
