@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
+import CalcScaleDisplay from './CalcScaleDisplay';
 
-class CalcDisplay extends Component {
+class CalcDisplay extends React.Component {
   render(){
-    const {displayValue} = this.props;
     return (
       <div className="calc-display">
-        <span className="calc-text">{displayValue}</span>
+        <CalcScaleDisplay displayValue={this.props.displayValue} />
       </div>
     )
   }
