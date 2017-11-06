@@ -165,14 +165,18 @@ class Calc extends Component {
   render (){
     return (
       <div className="calculator">
+
         <CalcDisplay displayValue={this.state.displayValue} />
-	<CalcKeys inputDigit={this.inputDigit} performOperation={this.performOperation} clear={this.clear} clearAll={this.clearAll} displayValue={this.state.displayValue} addOneDot={this.addOneDot} toggleSign={this.toggleSign} />
+
         <div className="extra-button">
 	  <div className="oe-button">
 	    <input type="range" min="0" max="100" step="5" onChange={this.handleSliderValue} className="oe-slider" />
 	    <div>Value: {this.state.sliderValue}</div>
 	  </div>
 	</div>
+
+
+	<CalcKeys inputDigit={this.inputDigit} performOperation={this.performOperation} clear={this.clear} clearAll={this.clearAll} displayValue={this.state.displayValue} addOneDot={this.addOneDot} toggleSign={this.toggleSign} />
       </div>
     )
   }

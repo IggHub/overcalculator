@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Instruction />
+      {/*}        <Instruction />{*/}
         <Calc />
       </div>
     );
