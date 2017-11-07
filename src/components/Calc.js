@@ -24,7 +24,7 @@ class Calc extends Component {
       value: null,
       operator: null,
       waitingForOperand: false,
-      slideValue: ''
+      sliderValue: '0'
     };
     this.inputDigit = this.inputDigit.bind(this);
     this.performOperation = this.performOperation.bind(this);
@@ -170,7 +170,7 @@ class Calc extends Component {
 
         <div className="extra-button">
 	  <div className="oe-container">
-	    <input type="range" min="0" max="100" step="5" onChange={this.handleSliderValue} className="oe-slider" />
+	    <input type="range" min="0" max="100" step="5" value={String(this.state.sliderValue)} onChange={this.handleSliderValue} className="oe-slider" />
 	    <div className="oe-display">Overestimate: {this.state.sliderValue}%</div>
 	  </div>
 	</div>
