@@ -169,9 +169,9 @@ class Calc extends Component {
         <CalcDisplay displayValue={this.state.displayValue} />
 
         <div className="extra-button">
-	  <div className="oe-button">
+	  <div className="oe-container">
 	    <input type="range" min="0" max="100" step="5" onChange={this.handleSliderValue} className="oe-slider" />
-	    <div>Value: {this.state.sliderValue}</div>
+	    <div className="oe-display">Overestimate: {this.state.sliderValue}%</div>
 	  </div>
 	</div>
 
